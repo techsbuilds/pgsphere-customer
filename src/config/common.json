@@ -1,0 +1,71 @@
+{
+  "appName": "PG Customer Portal",
+  "companyName": "PG Management System",
+  "navigation": {
+    "dashboard": "Dashboard",
+    "dailyUpdate": "Daily Updates",
+    "mealMenu": "Meal Menu",
+    "complaints": "Complaints",
+    "rent": "Rent Payments",
+    "profile": "Profile"
+  },
+  "forms": {
+    "registration": {
+      "title": "Customer Registration",
+      "fields": {
+        "fullName": "Full Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "address": "Address",
+        "emergencyContact": "Emergency Contact",
+        "emergencyPhone": "Emergency Phone"
+      }
+    },
+    "complaint": {
+      "title": "Submit Complaint",
+      "fields": {
+        "subject": "Subject",
+        "description": "Description",
+        "priority": "Priority",
+        "category": "Category"
+      }
+    },
+    "leaveRequest": {
+      "title": "Leave Request",
+      "fields": {
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "reason": "Reason",
+        "contactDuringLeave": "Contact During Leave"
+      }
+    },
+    "mealCancellation": {
+      "title": "Cancel Meal",
+      "fields": {
+        "date": "Date",
+        "mealType": "Meal Type",
+        "reason": "Reason"
+      }
+    }
+  },
+  "messages": {
+    "welcome": "Welcome to PG Customer Portal",
+    "loginSuccess": "Login successful!",
+    "loginError": "Invalid credentials",
+    "accountNotVerified": "Your account is pending admin approval. Please wait for verification.",
+    "registrationPending": "Your registration is pending admin approval",
+    "complaintSubmitted": "Complaint submitted successfully",
+    "leaveRequestSubmitted": "Leave request submitted successfully",
+    "mealCancelled": "Meal cancelled successfully"
+  },
+  "statuses": {
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "mealTypes": ["Breakfast", "Lunch", "Dinner"],
+  "complaintCategories": ["Food Quality", "Room Issues", "Staff Behavior", "Maintenance", "Other"],
+  "priorities": ["Low", "Medium", "High", "Urgent"]
+}
