@@ -73,7 +73,7 @@ const Sidebar: React.FC = () => {
                   className="w-10 h-12 rounded-lg object-cover"
                 />
               
-              <h1 className="text-lg font-bold text-gray-800">
+              <h1 className="text-lg font-bold text-[#202947]">
                  Pgsphere
               </h1>
             </div>
@@ -102,8 +102,8 @@ const Sidebar: React.FC = () => {
               className={({ isActive }) =>
                 `flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
                   isActive
-                    ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-500'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-gray-900'
+                    ? 'bg-[#e1e5f3] text-[#2e3d7c] border-r-2 border-[#40529a]'
+                    : 'text-[#202947] hover:bg-[#f3f5fa] hover:text-[#27346b]'
                 }`
               }
             >

@@ -35,7 +35,7 @@ const DailyUpdates: React.FC = () => {
     const normalizedType = type.toLowerCase();
     switch (normalizedType) {
       case 'notice':
-        return 'bg-blue-50 border-blue-200 text-blue-700';
+        return 'bg-[#f3f5fa] border-[#c3cae7] text-[#27346b]';
       case 'announcement':
         return 'bg-green-50 border-green-200 text-green-700';
       case 'maintenance':

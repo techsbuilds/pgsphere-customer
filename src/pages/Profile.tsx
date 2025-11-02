@@ -133,7 +133,7 @@ const Profile: React.FC = () => {
           {!isEditing ? (
             <button
               onClick={() => setIsEditing(true)}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="flex items-center space-x-2 px-4 py-2 bg-[#2e3d7c] text-white rounded-lg hover:bg-[#27346b] transition-colors"
             >
               <Edit3 size={20} />
               <span>Edit Profile</span>
@@ -212,7 +212,7 @@ const Profile: React.FC = () => {
       {/* Personal Information Form - Top Section */}
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-6 flex items-center">
-          <User size={20} className="mr-2 text-blue-500" />
+          <User size={20} className="mr-2 text-[#40529a]" />
               Personal Information
             </h3>
             
@@ -231,7 +231,7 @@ const Profile: React.FC = () => {
                   name="name"
                   value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#40529a] focus:border-[#40529a]"
                       required
                     />
                   ) : (
@@ -253,7 +253,7 @@ const Profile: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#40529a] focus:border-[#40529a]"
                       required
                     />
                   ) : (
@@ -275,7 +275,7 @@ const Profile: React.FC = () => {
                   name="mobile"
                   value={formData.mobile}
                       onChange={handleInputChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#40529a] focus:border-[#40529a]"
                       required
                     />
                   ) : (
@@ -296,7 +296,7 @@ const Profile: React.FC = () => {
             {branchInfo && (
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
                 <h3 className="text-base font-semibold text-gray-900 mb-4 flex items-center">
-                  <Building2 size={18} className="mr-2 text-blue-500" />
+                  <Building2 size={18} className="mr-2 text-[#40529a]" />
                   PG Information
                 </h3>
                 <div className="text-center">
@@ -321,7 +321,7 @@ const Profile: React.FC = () => {
             {/* Room Information */}
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
               <h3 className="text-base font-semibold text-gray-900 mb-4 flex items-center">
-                <Bed size={18} className="mr-2 text-blue-500" />
+                <Bed size={18} className="mr-2 text-[#40529a]" />
                 Room Details
               </h3>
               <div className="space-y-2">
@@ -349,7 +349,7 @@ const Profile: React.FC = () => {
               </div>
                     {customerProfile.room.remark && (
                       <div className="pt-2 border-t border-gray-100 mt-2 ">
-                        <span className="text-xs text-black italic rounded-full px-2 py-1 bg-blue-100">{customerProfile.room.remark}</span>
+                        <span className="text-xs text-black italic rounded-full px-2 py-1 bg-[#e1e5f3]">{customerProfile.room.remark}</span>
                       </div>
                     )}
                   </>
@@ -361,7 +361,7 @@ const Profile: React.FC = () => {
             {customerProfile && (customerProfile.rent_amount || customerProfile.deposite_amount) ? (
               <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
                 <h3 className="text-base font-semibold text-gray-900 mb-4 flex items-center">
-                  <IndianRupee size={18} className="mr-2 text-blue-500" />
+                  <IndianRupee size={18} className="mr-2 text-[#40529a]" />
                   Rent & Deposit Details
                 </h3>
                 <div className="space-y-3">
@@ -372,9 +372,9 @@ const Profile: React.FC = () => {
                       </div>
                     )}
                   {customerProfile.deposite_amount && (
-                    <div className="p-3 bg-blue-50 rounded-lg">
+                    <div className="p-3 bg-[#f3f5fa] rounded-lg">
                       <p className="text-xs text-gray-600 mb-1">Security Deposit</p>
-                      <p className="text-lg font-bold text-blue-700">₹{customerProfile.deposite_amount.toLocaleString()}</p>
+                      <p className="text-lg font-bold text-[#27346b]">₹{customerProfile.deposite_amount.toLocaleString()}</p>
                       </div>
                     )}
                 </div>

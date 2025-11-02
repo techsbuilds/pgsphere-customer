@@ -196,21 +196,21 @@ const Dashboard: React.FC = () => {
       title: 'Today\'s Updates',
       value: stats?.dailyUpdateCount || 0,
       icon: Bell,
-      color: 'bg-blue-50 border-blue-200 text-black-700',
-      iconColor: 'text-blue-500',
+      color: 'bg-blue-50 border-[#9fa8d5] text-black-700',
+      iconColor: 'text-[#40529a]',
     },
     {
       title: 'Today\'s Meals',
       value: todayMeals?.meals.length || 0,
       icon: Utensils,
-      color: 'bg-blue-50 border-blue-200 text-black-700',
+      color: 'bg-blue-50 border-[#9fa8d5] text-black-700',
       iconColor: 'text-green-500',
     },
     {
       title: 'Active Complaints',
       value: stats?.complaintCount || 0,
       icon: MessageSquare,
-      color: 'bg-blue-50 border-blue-200 text-black-700',
+      color: 'bg-blue-50 border-[#9fa8d5] text-black-700',
       iconColor: 'text-orange-500',
     },
     {
@@ -218,7 +218,7 @@ const Dashboard: React.FC = () => {
       value: stats?.pendingRentAmount ? formatCurrency(stats.pendingRentAmount) : '₹0',
       subtitle: stats?.pendingRentMonths ? `${stats.pendingRentMonths} month${stats.pendingRentMonths > 1 ? 's' : ''}` : undefined,
       icon: Coins,
-      color: 'bg-blue-50 border-blue-200 text-black-700',
+      color: 'bg-blue-50 border-[#9fa8d5] text-black-700',
       iconColor: 'text-[#8A7E11]',
     },
   ];
@@ -521,14 +521,14 @@ const Dashboard: React.FC = () => {
         ) : (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-            <Bell size={20} className="mr-2 text-blue-500" />
+            <Bell size={20} className="mr-2 text-[#40529a]" />
             Recent Updates
           </h2>
           <div className="space-y-3">
             {updates && updates.length > 0 ? updates.slice(0, 5).map((update) => (
               <div key={update._id} className="flex items-start p-3 bg-gray-50 rounded-lg">
-                <div className="p-2 rounded-full mr-3 bg-blue-100">
-                  <Bell size={16} className="text-blue-600" />
+                <div className="p-2 rounded-full mr-3 bg-[#e1e5f3]">
+                  <Bell size={16} className="text-[#2e3d7c]" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-medium text-gray-900 text-sm">{update.title}</h3>

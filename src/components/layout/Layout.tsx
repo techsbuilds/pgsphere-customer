@@ -25,14 +25,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {showInstallBanner && <div className="h-16 bg-transparent"></div>}
         
         {/* Mobile header */}
-        <div className="lg:hidden bg-white shadow-sm p-4 flex items-center">
+        <div className="lg:hidden bg-white shadow-sm p-2 flex items-center">
           <button
             onClick={() => dispatch(toggleSidebar())}
             className="p-2 hover:bg-gray-100 rounded-lg transition-colors mr-4"
           >
             <Menu size={24} />
           </button>
-          <h1 className="text-lg font-semibold text-gray-800">Pgsphere</h1>
+          <div className="flex items-center gap-2">
+            <img 
+              src="/icons/pgapplogo.svg" 
+              alt="Pgsphere"
+              className="w-10 h-12 rounded-lg object-cover"
+            />
+            <h1 className="text-lg font-bold text-[#202947]">Pgsphere</h1>
+          </div>
         </div>
 
         {/* Main content */}
