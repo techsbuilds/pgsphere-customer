@@ -57,7 +57,7 @@ const DateButton: React.FC<{
       onClick={() => onClick(date)}
       className={`p-3 rounded-lg border-2 text-center transition-all ${
         isSelected
-          ? 'border-blue-500 bg-blue-50 text-blue-700'
+          ? 'border-[#40529a] bg-[#f3f5fa] text-[#27346b]'
           : 'border-gray-200 hover:border-gray-300 text-gray-700'
       }`}
     >
@@ -547,7 +547,7 @@ const MealMenu: React.FC = () => {
       {/* Week Navigation */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
         <h2 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-          <Calendar size={20} className="mr-2 text-blue-500" />
+          <Calendar size={20} className="mr-2 text-[#40529a]" />
           Select Date
         </h2>
         {/* Desktop View - Full Grid */}

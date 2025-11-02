@@ -254,6 +254,7 @@ export const registerCustomer = createAsyncThunk(
       const response = await fetch(`${API_BASE_URL}${API_ENDPOINTS.register}`, {
         method: 'POST',
         body: formData,
+        credentials: 'include', // Important: Required to receive cookies from the backend
       });
       
       const result = await response.json();
@@ -281,6 +282,7 @@ export const loginCustomer = createAsyncThunk(
           password: credentials.password,
           userType: 'Customer'
         }),
+        credentials: 'include', // Important: Required to receive cookies from the backend
       });
       
       const data = await response.json();
@@ -327,6 +329,32 @@ export const updateProfile = createAsyncThunk(
       return response;
     } catch (error: any) {
       return rejectWithValue(error.message || 'Failed to update profile');
+    }
+  }
+);
+
+export const logoutCustomer = createAsyncThunk(
+  'auth/logout',
+  async (_, { rejectWithValue }) => {
+    try {
+      const response = await fetch(`${API_BASE_URL}${API_ENDPOINTS.logout}`, {
+        method: 'GET',
+        credentials: 'include', // Important: Required to send cookie for clearing
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok || !data.success) {
+        // Log error but still allow logout to proceed
+        console.warn('Logout API call failed:', data.message || 'Logout endpoint error');
+        return rejectWithValue(data.message || 'Logout failed');
+      }
+      
+      return data;
+    } catch (error: any) {
+      // Network error - still allow logout to proceed
+      console.warn('Logout network error:', error.message);
+      return rejectWithValue(error.message || 'Network error during logout');
     }
   }
 );
@@ -534,6 +562,43 @@ const authSlice = createSlice({
       .addCase(fetchCustomerProfile.rejected, (state, action) => {
         state.isLoading = false;
         state.error = (action.payload as string) || action.error.message || 'Failed to fetch customer profile';
+      })
+      .addCase(logoutCustomer.pending, (state) => {
+        state.isLoading = true;
+        state.error = null;
+      })
+      .addCase(logoutCustomer.fulfilled, (state) => {
+        // Clear all state on successful logout
+        state.user = null;
+        state.token = null;
+        state.customerProfile = null;
+        state.pgName = null;
+        state.pgLogo = null;
+        state.branchInfo = null;
+        state.isLoading = false;
+        state.isInitialized = true;
+        // Clear all auth-related data from localStorage
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
+        localStorage.removeItem('userType');
+        localStorage.removeItem('pgcode');
+      })
+      .addCase(logoutCustomer.rejected, (state) => {
+        // Even if API call fails, clear local state
+        // This ensures user is logged out locally even if backend call fails
+        state.user = null;
+        state.token = null;
+        state.customerProfile = null;
+        state.pgName = null;
+        state.pgLogo = null;
+        state.branchInfo = null;
+        state.isLoading = false;
+        state.isInitialized = true;
+        // Clear all auth-related data from localStorage
+        localStorage.removeItem('token');
+        localStorage.removeItem('userId');
+        localStorage.removeItem('userType');
+        localStorage.removeItem('pgcode');
       });
   },
 });

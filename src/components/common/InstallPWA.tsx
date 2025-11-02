@@ -119,7 +119,7 @@ const InstallPWA: React.FC = () => {
       <div className="fixed bottom-4 right-4 z-50">
         <button
           onClick={handleInstallClick}
-          className="flex items-center space-x-2 px-4 py-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-all hover:scale-105"
+          className="flex items-center space-x-2 px-4 py-3 bg-[#202947] text-white rounded-full shadow-lg  transition-all hover:scale-105"
         >
           <Download size={20} />
           <span className="font-medium">Install App</span>
@@ -127,7 +127,7 @@ const InstallPWA: React.FC = () => {
       </div>
 
       {/* Install Banner - Fixed positioning to avoid sidebar overlap */}
-      <div className="fixed top-0 left-0 right-0 bg-blue-600 text-white p-3 z-40 shadow-lg">
+      <div className="fixed top-0 left-0 right-0 bg-[#202947] text-white p-3 z-40 shadow-lg">
         <div className="flex items-center justify-between max-w-7xl mx-auto px-4 lg:ml-64 lg:px-0">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center p-1">
@@ -147,7 +147,7 @@ const InstallPWA: React.FC = () => {
           <div className="flex items-center space-x-2">
             <button
               onClick={handleInstallClick}
-              className="flex items-center space-x-1 px-3 py-1 bg-white text-blue-600 rounded-md text-sm font-medium hover:bg-gray-100 transition-colors"
+              className="flex items-center space-x-1 px-3 py-1 bg-white text-[#202947] rounded-md text-sm font-medium hover:bg-gray-100 transition-colors"
             >
               <Download size={16} />
               <span>Install</span>
@@ -188,8 +188,8 @@ const InstallPWA: React.FC = () => {
                   
                   <div className="space-y-4 text-left">
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                        <span className="text-blue-600 font-bold text-sm">1</span>
+                      <div className="w-8 h-8 bg-[#e1e5f3] rounded-full flex items-center justify-center">
+                        <span className="text-[#202947] font-bold text-sm">1</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <span className="text-sm text-gray-700">Tap the</span>
@@ -202,8 +202,8 @@ const InstallPWA: React.FC = () => {
                     </div>
                     
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                        <span className="text-blue-600 font-bold text-sm">2</span>
+                      <div className="w-8 h-8 bg-[#e1e5f3] rounded-full flex items-center justify-center">
+                        <span className="text-[#202947] font-bold text-sm">2</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <span className="text-sm text-gray-700">Select</span>
@@ -217,7 +217,7 @@ const InstallPWA: React.FC = () => {
                   
                   <button
                     onClick={handleDismiss}
-                    className="w-full mt-6 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                    className="w-full mt-6 px-4 py-2 bg-[#202947] text-white rounded-md hover:bg-blue-700 transition-colors"
                   >
                     Got it!
                   </button>

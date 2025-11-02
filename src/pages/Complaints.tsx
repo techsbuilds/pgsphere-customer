@@ -107,7 +107,7 @@ const Complaints: React.FC = () => {
           </div>
           <button
             onClick={() => setShowForm(true)}
-            className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="flex items-center space-x-2 px-4 py-2 bg-[#2e3d7c] text-white rounded-lg hover:bg-[#27346b]"
           >
             <Plus size={20} />
             <span>New Complaint</span>
@@ -126,7 +126,7 @@ const Complaints: React.FC = () => {
           </p>
           <button
             onClick={() => setShowForm(true)}
-            className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-[#2e3d7c] text-white rounded-lg hover:bg-[#27346b]"
           >
             <Plus size={20} />
             <span>New Complaint</span>
@@ -161,8 +161,9 @@ const Complaints: React.FC = () => {
                   type="text"
                   required
                   value={formData.subject}
+                  placeholder="Enter your complaint subject"
                   onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#40529a] focus:border-[#40529a]"
                 />
               </div>
 
@@ -175,11 +176,11 @@ const Complaints: React.FC = () => {
                   required
                   value={formData.category}
                   onChange={(e) => setFormData({...formData, category: e.target.value})}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#40529a] focus:border-[#40529a]"
                 >
-                  <option value="">Select Category</option>
+                  <option value="" >Select Category</option>
                   {commonConfig.complaintCategories.map(category => (
-                    <option key={category} value={category}>{category}</option>
+                    <option key={category} value={category} >{category}</option>
                   ))}
                 </select>
               </div>
@@ -194,7 +195,7 @@ const Complaints: React.FC = () => {
                   value={formData.description}
                   onChange={(e) => setFormData({...formData, description: e.target.value})}
                   rows={4}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#40529a] focus:border-[#40529a]"
                   placeholder="Describe your complaint in detail..."
                 />
               </div>
@@ -209,7 +210,7 @@ const Complaints: React.FC = () => {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
+                  className="flex-1 px-4 py-2 text-sm font-medium text-white bg-[#2e3d7c] hover:bg-[#27346b] rounded-md transition-colors"
                 >
                   Submit Complaint
                 </button>
@@ -333,7 +334,7 @@ const Complaints: React.FC = () => {
           </p>
           <button
             onClick={() => setShowForm(true)}
-            className="inline-flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-flex items-center space-x-2 px-4 py-2 bg-[#2e3d7c] text-white rounded-lg hover:bg-blue-[#27346b] transition-colors"
           >
             <Plus size={20} />
             <span>Submit Complaint</span>

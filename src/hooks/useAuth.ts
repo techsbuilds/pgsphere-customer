@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store';
-import { logout } from '../store/slices/authSlice';
+import { logoutCustomer } from '../store/slices/authSlice';
 
 export const useAuth = () => {
   const dispatch = useDispatch();
@@ -12,8 +12,15 @@ export const useAuth = () => {
   // Check if user is approved (if status field exists, otherwise assume approved if authenticated)
   const isApproved = user?.status ? user.status === 'approved' : isAuthenticated;
 
-  const handleLogout = () => {
-    dispatch(logout());
+  const handleLogout = async () => {
+    try {
+      await dispatch(logoutCustomer()).unwrap();
+      // Redirect to login page after successful logout
+      window.location.href = '/login';
+    } catch (error) {
+      // Even if API fails, redirect to login (state already cleared)
+      window.location.href = '/login';
+    }
   };
 
   return {

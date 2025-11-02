@@ -7,6 +7,7 @@ export const API_ENDPOINTS = {
   verifySignupToken: '/api/auth/verify/customer/signup', // Token validation for signup
   register: '/api/auth/customer/sign-up',
   login: '/api/auth/customer/sign-in',
+  logout: '/api/auth/logout',
   profile: '/api/auth/profile',
   changePassword: '/api/auth/change-password',
   customerProfile: '/api/customer/me',

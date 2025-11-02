@@ -234,7 +234,7 @@ const Rent: React.FC = () => {
           </div>
           <div className="flex items-center space-x-4">
             {/* Year Selector */}
-            {availableYears.length > 0 && (
+            {/* {availableYears.length > 0 && (
             <div className="flex items-center space-x-2">
               <Calendar size={20} className="text-gray-500" />
               <select
@@ -247,7 +247,7 @@ const Rent: React.FC = () => {
                 ))}
               </select>
             </div>
-            )}
+            )} */}
             <div className="flex items-center space-x-2 text-sm text-gray-500">
               <span>Current Month: {format(new Date(), 'MMMM yyyy')}</span>
             </div>
@@ -291,11 +291,11 @@ const Rent: React.FC = () => {
       </div>
 
       {/* No Payments Message */}
-      {payments.length === 0 && (
+      {payments.length === 0 &&  (
         <div className="bg-white border  rounded-lg p-6 text-center">
-          <Coins size={48} className="mx-auto text-blue-500 mb-3" />
-          <h3 className="text-lg font-semibold text-blue-900 mb-2">No Rent Payments Found</h3>
-          <p className="text-blue-700">All your rent payments are up to date!</p>
+          <Coins size={48} className="mx-auto text-gray-400 mb-3" />
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">No Rent Payments Found</h3>
+          <p className="text-gray-500">All your rent payments are up to date!</p>
         </div>
       )}
 
@@ -312,7 +312,7 @@ const Rent: React.FC = () => {
             <div
               key={paymentKey}
               className={`bg-white rounded-lg shadow-sm border border-gray-200 p-6 transition-all hover:shadow-md ${
-                isCurrent ? 'ring-2 ring-blue-500 bg-blue-50' : ''
+                isCurrent ? 'ring-2 ring-[#40529a] bg-[#f3f5fa]' : ''
               }`}
             >
                {isCurrent && (
@@ -376,7 +376,7 @@ const Rent: React.FC = () => {
                   {payment.status.toLowerCase() === 'pending' && (
                     <button
                       onClick={() => handlePayRent(payment)}
-                      className="flex-1 flex items-center justify-center space-x-1 px-3 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
+                      className="flex-1 flex items-center justify-center space-x-1 px-3 py-2 text-sm font-medium text-white bg-[#2e3d7c] hover:bg-[#27346b] rounded-md transition-colors"
                     >
                       <CreditCard size={16} />
                       <span>Pay Now</span>
@@ -389,7 +389,7 @@ const Rent: React.FC = () => {
                       setSelectedTransactions(payment.requestList || []);
                       setShowTransactionsModal(true);
                     }}
-                    className={`flex items-center justify-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors ${
+                    className={`flex items-center justify-center space-x-1 px-3 py-2 text-sm font-medium text-gray-700 bg-gray-300 hover:bg-[#e1e5f3] rounded-md transition-colors ${
                       payment.status.toLowerCase() === 'pending' ? 'flex-1' : 'w-full'
                     }`}
                   >
@@ -461,15 +461,15 @@ const Rent: React.FC = () => {
                   </div> */}
 
                   {/* Payment Details */}
-                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
-                        <h4 className="font-medium text-blue-900 mb-3 flex items-center">
+                  <div className="bg-[#f3f5fa] border border-[#c3cae7] rounded-lg p-4 mb-4">
+                        <h4 className="font-medium text-[#161b33] blue-900 mb-3 flex items-center">
                           <IndianRupee size={18} className="mr-2" />
                           Payment Details
                         </h4>
                         <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
-                            <span className="text-blue-700">Rent Amount:</span>
-                            <span className="font-medium text-blue-900">
+                            <span className="text-[#40529a]">Rent Amount:</span>
+                            <span className="font-medium text-[#40529a]">
                               {formatCurrency(selectedPayment.rent_amount)}
                             </span>
                           </div>
@@ -479,8 +479,8 @@ const Rent: React.FC = () => {
                             <>
                               {selectedPayment.extra_charges.map((charge: any, idx: number) => (
                                 <div key={idx} className="flex justify-between">
-                                  <span className="text-blue-700">• {charge.name}:</span>
-                        <span className="font-medium text-blue-900">
+                                  <span className="text-[#40529a]">• {charge.name}:</span>
+                        <span className="font-medium text-[#40529a]">
                                     {formatCurrency(charge.amount)}
                                   </span>
                                 </div>
@@ -488,15 +488,15 @@ const Rent: React.FC = () => {
                             </>
                           )}
                           
-                          <div className="flex justify-between border-t border-blue-300 pt-2 font-semibold">
-                            <span className="text-blue-900">Total Amount:</span>
-                            <span className="text-blue-900">
+                          <div className="flex justify-between border-t border-[#9fa8d5] pt-2 font-semibold">
+                            <span className="text-[#161b33]">Total Amount:</span>
+                            <span className="text-[#161b33]">
                               {formatCurrency(calculateTotalAmount(selectedPayment))}
                         </span>
                       </div>
                           
                       <div className="flex justify-between">
-                            <span className="text-blue-700">Pending:</span>
+                            <span className="text-[#40529a]">Pending:</span>
                             <span className="font-medium text-orange-600">
                               {formatCurrency(selectedPayment.pending)}
                             </span>
@@ -665,7 +665,7 @@ const Rent: React.FC = () => {
             <div className="p-6">
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-lg font-semibold text-gray-900 flex items-center">
-                <ReceiptIndianRupee size={24} className="mr-2 text-blue-600" />
+                <ReceiptIndianRupee size={24} className="mr-2 text-[#2e3d7c]" />
                   Transaction History
                 </h3>
                 <button
