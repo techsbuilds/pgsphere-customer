@@ -41,8 +41,8 @@ export const authenticatedFetch = async (
     throw new Error('No authentication token found. Please login again.');
   }
 
-  // Set token as cookie
-  document.cookie = `pgtoken=${token}; path=/`;
+  // Note: Cookie is set by the backend via Set-Cookie header during login
+  // We don't need to manually set it here - it will be sent automatically with credentials: 'include'
 
   const headers = {
     'Content-Type': 'application/json',
@@ -147,8 +147,8 @@ export const authenticatedFormData = async (
     throw new Error('No authentication token found. Please login again.');
   }
 
-  // Set token as cookie
-  document.cookie = `pgtoken=${token}; path=/`;
+  // Note: Cookie is set by the backend via Set-Cookie header during login
+  // We don't need to manually set it here - it will be sent automatically with credentials: 'include'
 
   const url = endpoint.startsWith('http') ? endpoint : `${API_BASE_URL}${endpoint}`;
 

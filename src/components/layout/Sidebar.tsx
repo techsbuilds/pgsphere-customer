@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
 import { toggleSidebar } from '../../store/slices/uiSlice';
-import { logout } from '../../store/slices/authSlice';
+import { logoutCustomer } from '../../store/slices/authSlice';
 import { 
   Home, 
   Bell, 
@@ -31,8 +31,15 @@ const Sidebar: React.FC = () => {
     { path: '/profile', icon: User, label: commonConfig.navigation.profile },
   ];
 
-  const handleLogout = () => {
-    dispatch(logout());
+  const handleLogout = async () => {
+    try {
+      await dispatch(logoutCustomer()).unwrap();
+      // Redirect to login page after successful logout
+      window.location.href = '/login';
+    } catch (error) {
+      // Even if API fails, redirect to login (state already cleared)
+      window.location.href = '/login';
+    }
   };
 
   // Show skeleton only on initial load when user data is not available yet
