@@ -42,6 +42,13 @@ const Sidebar: React.FC = () => {
     }
   };
 
+  // Close sidebar when navigating (especially for mobile)
+  const handleNavigation = () => {
+    if (sidebarOpen) {
+      dispatch(toggleSidebar());
+    }
+  };
+
   // Show skeleton only on initial load when user data is not available yet
   if (isLoading && !user) {
     return <SidebarSkeleton />;
@@ -99,6 +106,7 @@ const Sidebar: React.FC = () => {
             <NavLink
               key={item.path}
               to={item.path}
+              onClick={handleNavigation}
               className={({ isActive }) =>
                 `flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors ${
                   isActive

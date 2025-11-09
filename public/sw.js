@@ -1,8 +1,8 @@
-const CACHE_NAME = 'Pgsphere-v5';
+const CACHE_NAME = 'Pgsphere-v6';
 const urlsToCache = [
   '/',
   '/manifest.json',
-  '/icons/pgapplogo.svg'
+  '/icons/pg_logo_new.svg'
 ];
 
 // Install event
