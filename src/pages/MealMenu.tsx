@@ -80,8 +80,8 @@ const DateButtonMobile: React.FC<{
       onClick={() => onClick(date)}
       className={`flex-shrink-0 px-3 py-2 rounded-lg border text-center transition-colors duration-200 ease-out min-w-[80px] ${
         isSelected
-          ? 'border-blue-500 bg-blue-600 text-white'
-          : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
+          ? 'border-[#40529a] bg-[#f3f5fa] text-[#27346b]'
+          : 'border-gray-200 hover:border-gray-300 text-gray-700'
       }`}
       id={`date-${date}`}
     >
@@ -276,13 +276,21 @@ const MealDisplay: React.FC<{
 
                     {/* Mobile Layout */}
                     <div className="md:hidden">
-                      {/* Switch in top right corner - only if not cancelled */}
-                      {!isCancelled && (
-                        <div className="absolute top-0 right-0">
+                      {/* Cancel before badge and Switch in same row - only if not cancelled and not expired */}
+                      {!isExpired && !isCancelled && mealConfig && (
+                        <div className="absolute -top-2 left-0 right-0 flex items-center justify-between">
+                          <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full flex items-center whitespace-nowrap">
+                            <Clock size={12} className="mr-1" />
+                            Cancel before {
+                              meal.type === 'breakfast' ? mealConfig.breakfast_time :
+                              meal.type === 'lunch' ? mealConfig.lunch_time :
+                              mealConfig.dinner_time
+                            }
+                          </span>
                           <Switch
                             checked={meal.isSelected}
                             onChange={(checked) => handleMealSelection(selectedDate, meal.id, checked, meal.type)}
-                            disabled={isExpired || isMealTimePassed(meal.type, selectedDate)}
+                            disabled={isMealTimePassed(meal.type, selectedDate)}
                           />
                         </div>
                       )}
@@ -290,7 +298,7 @@ const MealDisplay: React.FC<{
                       {/* Time Expired Badge in top right if expired */}
                       {isExpired && !isCancelled && (
                         <div className="absolute top-0 right-0">
-                          <span className="px-3 py-1 text-xs font-medium bg-orange-100 text-orange-800 rounded-full border border-orange-200">
+                          <span className="px-2.5 py-1 text-xs font-medium bg-orange-100 text-orange-800 rounded-full border border-orange-200 whitespace-nowrap">
                             Time Expired
                           </span>
                         </div>
@@ -299,26 +307,16 @@ const MealDisplay: React.FC<{
                       {/* Cancelled Badge in top right if cancelled */}
                       {isCancelled && (
                         <div className="absolute top-0 right-0">
-                          <span className="px-3 py-1 text-xs font-medium bg-red-100 text-red-800 rounded-full border border-red-200">
+                          <span className="px-2.5 py-1 text-xs font-medium bg-red-100 text-red-800 rounded-full border border-red-200">
                             Cancelled
                           </span>
                         </div>
                       )}
                       
                       {/* Meal info */}
-                      <div className="pr-2">
+                      <div className="pr-2 pt-6">
                         <div className="flex items-center space-x-2 mb-2">
                           <h3 className="font-semibold text-lg capitalize">{meal.type}</h3>
-                          {!isExpired && !isCancelled && mealConfig && (
-                            <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full flex items-center">
-                              <Clock size={12} className="mr-1" />
-                              Cancel before {
-                                meal.type === 'breakfast' ? mealConfig.breakfast_time :
-                                meal.type === 'lunch' ? mealConfig.lunch_time :
-                                mealConfig.dinner_time
-                              }
-                            </span>
-                          )}
                         </div>
                         
                         {/* Status indicator for selected meals */}
@@ -536,10 +534,14 @@ const MealMenu: React.FC = () => {
     <div className="space-y-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
-          {commonConfig.navigation.mealMenu}
-        </h1>
-        <p className="text-gray-600">
+        <div className="flex items-center space-x-2">
+          <Utensils size={20} className="text-[#2e3d7c]" />
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+            {commonConfig.navigation.mealMenu}
+          </h1>
+        </div>
+    
+        <p className="text-gray-600  md:text-base text-xs">
           View and manage your daily meal schedule
         </p>
       </div>

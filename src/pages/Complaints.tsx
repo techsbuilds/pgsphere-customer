@@ -97,10 +97,14 @@ const Complaints: React.FC = () => {
         <div className="hidden md:flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
-                {commonConfig.navigation.complaints}
-              </h1>
-              <p className="text-gray-600 mt-1">
+              <div className="flex items-center space-x-2">
+                <MessageSquare size={20} className="text-[#2e3d7c]" />
+                <h1 className="text-2xl font-bold text-gray-900">
+                  {commonConfig.navigation.complaints}
+                </h1>
+              </div>
+            
+              <p className="text-gray-600 mt-1 md:text-base text-xs">
                 Submit and track your complaints and feedback
               </p>
             </div>
@@ -117,13 +121,19 @@ const Complaints: React.FC = () => {
         {/* Mobile Layout */}
         <div className="md:hidden">
           <div className="flex items-center space-x-3 mb-3">
-            <h1 className="text-xl font-bold text-gray-900">
-              {commonConfig.navigation.complaints}
-            </h1>
+            <div className='items-center'>
+              <div className="flex items-center space-x-2">
+                <MessageSquare size={20} className="text-[#2e3d7c]" />
+                <h1 className="text-2xl font-bold text-gray-900">
+                  {commonConfig.navigation.complaints}
+                </h1>
+              </div>
+              <p className="text-gray-600 mt-1 md:text-base text-xs">
+                Submit and track your complaints and feedback
+              </p>
+            </div>
           </div>
-          <p className="text-gray-600 mb-4">
-            Submit and track your complaints and feedback
-          </p>
+        
           <button
             onClick={() => setShowForm(true)}
             className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-[#2e3d7c] text-white rounded-lg hover:bg-[#27346b]"

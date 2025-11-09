@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../store';
 import { fetchCustomerProfile, updateProfile } from '../store/slices/authSlice';
 import { showNotification } from '../store/slices/uiSlice';
-import { User, Edit3, Save, X, Phone, Mail, Shield, UserCheck, Building2, IndianRupee, Calendar, Bed } from 'lucide-react';
+import { User, Edit3, Save, X, Phone, Mail, Shield, UserCheck, Building2, IndianRupee, Calendar, Bed, UserRoundCog } from 'lucide-react';
 import { ProfileSectionSkeleton, ProfileCardSkeleton } from '../components/common/Skeletons';
 
 const Profile: React.FC = () => {
@@ -91,12 +91,13 @@ const Profile: React.FC = () => {
         <div className="mb-6">
           <div className="flex items-center space-x-3">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
-                Profile Settings
-              </h1>
-              <p className="text-gray-600 mt-1">
-                Loading your profile information...
-              </p>
+              <div className='flex items-center space-x-2'>
+              <UserRoundCog size={20} className="text-[#2e3d7c]" />
+                <h1 className="text-2xl font-bold text-gray-900">
+                  Profile Settings
+                </h1>
+              </div>
+             
             </div>
           </div>
         </div>
@@ -122,10 +123,13 @@ const Profile: React.FC = () => {
         <div className="hidden md:flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
-                Profile Settings
-              </h1>
-              <p className="text-gray-600 mt-1">
+              <div className='flex items-center space-x-2'>
+                <UserRoundCog size={20} className="text-[#2e3d7c]" />
+                <h1 className="text-2xl font-bold text-gray-900">
+                  Profile Settings
+                </h1>
+              </div>
+              <p className="text-gray-600 mt-1 md:text-base text-xs">
                 View and manage your personal information
               </p>
             </div>
@@ -165,12 +169,15 @@ const Profile: React.FC = () => {
 
         {/* Mobile Layout */}
         <div className="md:hidden">
-          <div className="flex items-center space-x-3 mb-3">
-            <h1 className="text-xl font-bold text-gray-900">
-              Profile Settings
-            </h1>
+          <div className="flex items-center space-x-3 mb-2">
+            <div className='flex items-center space-x-2'>
+              <UserRoundCog size={20} className="text-[#2e3d7c]" />
+              <h1 className="text-2xl font-bold text-gray-900">
+                Profile Settings
+              </h1>
+            </div>
           </div>
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 mb-4 md:text-base text-xs">
             View and manage your personal information
           </p>
           
@@ -178,7 +185,7 @@ const Profile: React.FC = () => {
           {!isEditing ? (
             <button
               onClick={() => setIsEditing(true)}
-              className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="w-full flex items-center justify-center space-x-2 px-4 py-2 bg-[#2e3d7c] text-white rounded-lg hover:bg-[#27346b] transition-colors"
             >
               <Edit3 size={20} />
               <span>Edit Profile</span>
@@ -307,7 +314,7 @@ const Profile: React.FC = () => {
                       className="w-16 h-16 mx-auto mb-3 rounded-lg object-cover border-2 border-gray-100"
                     />
                   ) : (
-                    <div className="w-16 h-16 mx-auto mb-3 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <div className="w-16 h-16 mx-auto mb-3 bg-[#2e3d7c] rounded-lg flex items-center justify-center">
                       <span className="text-white font-bold text-xl">PG</span>
                     </div>
                   )}
