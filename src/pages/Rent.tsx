@@ -224,9 +224,13 @@ const Rent: React.FC = () => {
         <div className="hidden md:flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
+              <div className='flex items-center space-x-2'>
+                <Coins size={20} className="text-[#2e3d7c]" />
+                <h1 className="text-2xl font-bold text-gray-900">
                 Rent Payments
               </h1>
+              </div>
+             
               <p className="text-gray-600 mt-1">
                 {customer_name && `${customer_name} - ${mobile_no}`}
               </p>
@@ -257,9 +261,12 @@ const Rent: React.FC = () => {
         {/* Mobile Layout */}
         <div className="md:hidden">
           <div className="flex items-center space-x-3 mb-3">
-            <h1 className="text-xl font-bold text-gray-900">
-              Rent Payments
-            </h1>
+          <div className='flex items-center space-x-2'>
+                <Coins size={20} className="text-[#2e3d7c]" />
+                <h1 className="text-2xl font-bold text-gray-900">
+                Rent Payments
+              </h1>
+              </div>
           </div>
           {customer_name && (
           <p className="text-gray-600 mb-4">
@@ -268,7 +275,7 @@ const Rent: React.FC = () => {
           )}
           
           {/* Year Selector and Current Month - Mobile */}
-          {availableYears.length > 0 && (
+          {/* {availableYears.length > 0 && (
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <Calendar size={18} className="text-gray-500" />
@@ -286,7 +293,7 @@ const Rent: React.FC = () => {
               Current: {format(new Date(), 'MMM yyyy')}
             </div>
           </div>
-          )}
+          )} */}
         </div>
       </div>
 

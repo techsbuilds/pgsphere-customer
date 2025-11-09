@@ -80,8 +80,8 @@ const DateButtonMobile: React.FC<{
       onClick={() => onClick(date)}
       className={`flex-shrink-0 px-3 py-2 rounded-lg border text-center transition-colors duration-200 ease-out min-w-[80px] ${
         isSelected
-          ? 'border-blue-500 bg-blue-600 text-white'
-          : 'border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
+          ? 'border-[#40529a] bg-[#f3f5fa] text-[#27346b]'
+          : 'border-gray-200 hover:border-gray-300 text-gray-700'
       }`}
       id={`date-${date}`}
     >
@@ -534,10 +534,14 @@ const MealMenu: React.FC = () => {
     <div className="space-y-6">
       {/* Header */}
       <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2">
-          {commonConfig.navigation.mealMenu}
-        </h1>
-        <p className="text-gray-600">
+        <div className="flex items-center space-x-2">
+          <Utensils size={20} className="text-[#2e3d7c]" />
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+            {commonConfig.navigation.mealMenu}
+          </h1>
+        </div>
+    
+        <p className="text-gray-600  md:text-base text-xs">
           View and manage your daily meal schedule
         </p>
       </div>

@@ -55,11 +55,14 @@ const DailyUpdates: React.FC = () => {
           <div className="flex items-center space-x-3">
            
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
-                {commonConfig.navigation.dailyUpdate}
-              </h1>
+              <div className="flex items-center space-x-2">
+                <Bell size={20} className="text-[#2e3d7c]" />
+                <h1 className="text-2xl font-bold text-gray-900">
+                  {commonConfig.navigation.dailyUpdate}
+                </h1>
+              </div>
               <p className="text-gray-600 mt-1">
-                Stay updated with the latest announcements and notices from your PG management
+              Track PG updates, notices, and announcements easily.
               </p>
             </div>
           </div>
@@ -85,11 +88,14 @@ const DailyUpdates: React.FC = () => {
         <div className="hidden md:flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
-                {commonConfig.navigation.dailyUpdate}
-              </h1>
+            <div className="flex items-center space-x-2">
+                <Bell size={20} className="text-[#2e3d7c]" />
+                <h1 className="text-2xl font-bold text-gray-900">
+                  {commonConfig.navigation.dailyUpdate}
+                </h1>
+              </div>
               <p className="text-gray-600 mt-1">
-                Stay updated with the latest announcements and notices from your PG management
+              Track PG updates, notices, and announcements easily.
               </p>
             </div>
           </div>
@@ -103,17 +109,19 @@ const DailyUpdates: React.FC = () => {
 
         {/* Mobile Layout */}
         <div className="md:hidden">
-          <div className="flex items-center space-x-3 mb-3">
+          <div className="flex items-center space-x-3 mb-2">
+          <Bell size={20} className="text-[#2e3d7c]" />
             <h1 className="text-xl font-bold text-gray-900">
               {commonConfig.navigation.dailyUpdate}
             </h1>
           </div>
-          <p className="text-gray-600 mb-2">
-            Stay updated with the latest announcements and notices from your PG management
+          <p className="text-gray-600 mb-2 text-xs">
+            
+            Track PG updates, notices, and announcements easily.
           </p>
-          <div className="flex items-center space-x-2">
-            <Clock size={16} className="text-gray-400" />
-            <span className="text-sm text-gray-500">
+          <div className="flex items-center space-x-2 text-xs ">
+            <Clock size={14} className="text-gray-400" />
+            <span className="text-xs text-gray-500">
               {format(new Date(), 'EEEE, MMMM do, yyyy')}
             </span>
           </div>
