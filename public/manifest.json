@@ -7,20 +7,20 @@
   "display": "standalone",
   "display_override": ["standalone", "fullscreen"],
   "background_color": "#ffffff",
-  "theme_color": "#2563eb",
+  "theme_color": "#202947",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en",
   "categories": ["lifestyle", "productivity", "utilities"],
   "icons": [
     {
-      "src": "/icons/pgapplogo.svg",
+      "src": "/icons/pg_logo_new.svg",
       "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 384x384 512x512",
       "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/icons/pgapplogo.svg",
+      "src": "/icons/pg_logo_new.svg",
       "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "maskable"
@@ -34,7 +34,7 @@
       "url": "/dashboard",
       "icons": [
         {
-          "src": "/icons/pgapplogo.svg",
+          "src": "/icons/pg_logo_new.svg",
           "sizes": "any"
         }
       ]
@@ -46,7 +46,7 @@
       "url": "/meal-menu",
       "icons": [
         {
-          "src": "/icons/pgapplogo.svg",
+          "src": "/icons/pg_logo_new.svg",
           "sizes": "any"
         }
       ]
